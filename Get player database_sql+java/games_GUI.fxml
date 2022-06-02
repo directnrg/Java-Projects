@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+	prefWidth="900.0" xmlns="http://javafx.com/javafx/8"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="exercise1.Controller">
+	<left>
+		<VBox prefHeight="330.0" prefWidth="300.0"
+			BorderPane.alignment="CENTER" Alignment="CENTER">
+			<padding>
+				<Insets bottom="5.0" left="20.0" right="20.0" top="10.0" />
+			</padding>
+			<children>
+				<Label text="Profile Manager">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+
+				</Label>
+				<TextField fx:id="FirstNameField" promptText="First Name" />
+				<TextField fx:id="LastNameField" promptText="Last Name" />
+				<TextField fx:id="AddressField" promptText="Address" />
+				<TextField fx:id="PostalCodeField"
+					promptText="Postal Code" />
+				<TextField fx:id="ProvinceField" promptText="Province" />
+				<TextField fx:id="PhoneNumberField"
+					promptText="Phone Number" />
+
+				<VBox prefHeight="150.0" prefWidth="200.0" Alignment="CENTER">
+					<children>
+						<Button mnemonicParsing="false"
+							onAction="#insertPlayerInfo" prefHeight="25.0" prefWidth="170.0"
+							text="Create Player" />
+							<Region prefHeight="10.0" />
+						<Label text="Select a player ID Update Information."></Label>
+						<Region prefHeight="10.0" />
+						<ComboBox fx:id="cbxPlayerId" onAction="#fieldsToUpdate"
+							prefHeight="25.0" prefWidth="170.0" promptText="Select Player" />
+						<Button mnemonicParsing="false" onAction="#updatePlayer"
+							prefHeight="25.0" prefWidth="170.0" text="Update Player" />
+					</children>
+				</VBox>
+
+				<Label text="Add Game to database">
+
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<TextField fx:id="GameTitleField" promptText="Title" />
+				<Region prefHeight="10.0" />
+
+				<Button mnemonicParsing="false" onAction="#insertGameTitle"
+					prefHeight="25.0" prefWidth="170.0" text="Add Game" />
+			</children>
+		</VBox>
+	</left>
+	<center>
+		<VBox prefHeight="330.0" prefWidth="300.0" Alignment="CENTER">
+			<TextArea fx:id="txtAreaSummaryField" prefHeight="330.0"
+				prefWidth="300.0" />
+		</VBox>
+	</center>
+	<right>
+		<VBox prefHeight="150.0" prefWidth="300.0" Alignment="CENTER">
+			<padding>
+				<Insets bottom="5.0" left="20.0" right="20.0" top="10.0" />
+			</padding>
+			<children>
+				<Label text="Select a player ID to insert Information."></Label>
+				<Region prefHeight="10.0" />
+				<ComboBox fx:id="cbxPlayersIds" prefHeight="25.0"
+					prefWidth="170.0" promptText="Select Player ID" />
+
+				<Region prefHeight="10.0" />
+				<Label text="Insert a game ID you play from the list."></Label>
+				<Label text="To view list click 'Show Game Titles' Button"></Label>
+				<Region prefHeight="10.0" />
+				<TextField fx:id="GamePlayedIdField"
+					promptText="Game Played ID" />
+				<Region prefHeight="10.0" />
+				<Label text="Please enter the last time you played that game"></Label>
+				<Region prefHeight="10.0" />
+				<TextField fx:id="PlayedDateField" promptText="DD-MM-YYYY" />
+				<TextField fx:id="ScoreField" promptText="Max score" />
+				<Region prefHeight="10.0" />
+				<Button mnemonicParsing="false"
+					onAction="#insertPlayerAndGameInfo" prefHeight="25.0"
+					prefWidth="170.0" text="Insert" />
+				<Region prefHeight="10.0" />
+				<Label text="Select a player ID to print Information."></Label>
+				<Region prefHeight="10.0" />
+				<ComboBox fx:id="cbxPlayerIdsToPrint" prefHeight="25.0"
+					prefWidth="170.0" promptText="Select Player ID to Print" />
+				<Button mnemonicParsing="false"
+					onAction="#printPlayerAndGameReport" prefHeight="25.0"
+					prefWidth="170.0" text="Print Played Games Report" />
+
+			</children>
+		</VBox>
+	</right>
+	<bottom>
+		<HBox prefHeight="35.0" prefWidth="600.0"
+			BorderPane.alignment="CENTER" Alignment="CENTER">
+			<children>
+				<Button mnemonicParsing="false" onAction="#printGames"
+					prefHeight="25.0" prefWidth="150.0" text="Show Game Titles" />
+				<Button mnemonicParsing="false" onAction="#printPlayers"
+					prefHeight="25.0" prefWidth="150.0" text="Show Players" />
+
+				<Button mnemonicParsing="false" onAction="#clearFields"
+					prefHeight="25.0" prefWidth="150.0" text=" Clear All" />
+
+			</children>
+		</HBox>
+	</bottom>
+</BorderPane>
