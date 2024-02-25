@@ -1,7 +1,5 @@
-package gettingStudentInformation;
+package com.studentinfo;
 
-import java.util.ArrayList;
-import java.util.List;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -10,22 +8,31 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.scene.Scene;  
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Toggle;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.layout.*;  
-import javafx.stage.Stage;  
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import java.util.ArrayList;
+import java.util.List;
 
-public class StudentInfo extends Application {
-	private String [] studentCourses;
+/**
+ * JavaFX App
+ */
+public class App extends Application {
+
+    private String [] studentCourses;
 	//private String [] studentActivities;
 	private Button buttonDisplay;
 	private CheckBox studentCheckBox;
@@ -37,9 +44,7 @@ public class StudentInfo extends Application {
 	//private ListView<String> coursesList;
 	
 	
-	public static void main(String[] args) {  
-		launch(args);     
-		} 
+	
 	
 	@Override  
 	public void start(Stage primaryStage) {  
@@ -250,5 +255,9 @@ public class StudentInfo extends Application {
         return anchorpane;
  
 	}
-}	 
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+}
